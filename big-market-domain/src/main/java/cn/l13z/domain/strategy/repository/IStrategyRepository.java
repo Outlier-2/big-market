@@ -1,6 +1,8 @@
 package cn.l13z.domain.strategy.repository;
 
 import cn.l13z.domain.strategy.model.entity.StrategyAwardEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyRuleEntity;
 import java.util.List;
 import java.util.Map;
 
@@ -26,11 +28,11 @@ public interface IStrategyRepository {
 
     /**
      * 存储策略奖励搜索率
-     * @param strategyId 策略ID
+     * @param key 策略ID
      * @param rateRange 搜索率范围
      * @param strategyAwardSearchRateTable 策略奖励搜索率表
      */
-    void storeStrategyAwardSearchRate(Long strategyId, Integer rateRange,
+    void storeStrategyAwardSearchRate(String key, Integer rateRange,
         Map<Integer, Integer> strategyAwardSearchRateTable);
 
     /**
@@ -48,4 +50,8 @@ public interface IStrategyRepository {
      */
     int getRateRange(Long strategyId);
 
+
+    StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
+
+    StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleValue);
 }

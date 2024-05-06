@@ -18,4 +18,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface IStrategyRuleDao {
 
     List<StrategyRule> queryStrategyRuleList();
+
+    StrategyRule queryStrategyRule(StrategyRule strategyRuleReq);
 }

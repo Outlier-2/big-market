@@ -97,3 +97,9 @@ INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_tim
 INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (5, 105, 'openai_model', 'gpt-4', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:01');
 INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (6, 106, 'openai_model', 'da11-e-2', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:08');
 INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (7, 107, 'openai_model', 'da11-e-3', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:10');
+
+
+
+-- 添加列
+ALTER TABLE strategy
+    ADD rule_models VARCHAR(256) NOT NULL DEFAULT 'rule_weight' COMMENT '规则模型';

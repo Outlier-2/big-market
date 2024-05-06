@@ -1,9 +1,15 @@
 package cn.l13z.infrastructure.persistent.repository;
 
 import cn.l13z.domain.strategy.model.entity.StrategyAwardEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.l13z.domain.strategy.repository.IStrategyRepository;
 import cn.l13z.infrastructure.persistent.dao.IStrategyAwardDao;
+import cn.l13z.infrastructure.persistent.dao.IStrategyDao;
+import cn.l13z.infrastructure.persistent.dao.IStrategyRuleDao;
+import cn.l13z.infrastructure.persistent.po.Strategy;
 import cn.l13z.infrastructure.persistent.po.StrategyAward;
+import cn.l13z.infrastructure.persistent.po.StrategyRule;
 import cn.l13z.infrastructure.persistent.redis.IRedissonService;
 import cn.l13z.types.common.Constants;
 import java.util.ArrayList;
@@ -23,13 +29,20 @@ import org.springframework.stereotype.Repository;
  * <p>
  * Modification History: <br> - 2024/4/16 AlfredOrlando 策略存储实现类 <br>
  */
-@SuppressWarnings("unused")
 @Repository
 public class StrategyRepository implements IStrategyRepository {
 
     private static final Logger log = LoggerFactory.getLogger(StrategyRepository.class);
     @Resource
     private IStrategyAwardDao strategyAwardDao;
+
+    @Resource
+    private IStrategyDao strategyDao;
+
+
+    @Resource
+    private IStrategyRuleDao strategyRuleDao;
+
     @Resource
     private IRedissonService redisService;
 
@@ -64,14 +77,14 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public void storeStrategyAwardSearchRate(Long strategyId, Integer rateRange,
+    public void storeStrategyAwardSearchRate(String key, Integer rateRange,
         Map<Integer, Integer> strategyAwardSearchRateTable) {
         //  1.存储抽奖此策略的范围值
-        redisService.setValue(Constants.RedisKeys.STRATEGY_RATE_RANGE_KEY + strategyId, rateRange);
+        redisService.setValue(Constants.RedisKeys.STRATEGY_RATE_RANGE_KEY + key, rateRange);
 
         // 2.存储抽奖此策略的搜索率
         Map<Integer, Integer> cacheRateTable = redisService.getMap(
-            Constants.RedisKeys.STRATEGY_RATE_TABLE_KEY + strategyId);
+            Constants.RedisKeys.STRATEGY_RATE_TABLE_KEY + key);
         cacheRateTable.putAll(strategyAwardSearchRateTable);
     }
 
@@ -88,5 +101,34 @@ public class StrategyRepository implements IStrategyRepository {
         Integer cacheKey = redisService.getValue(Constants.RedisKeys.STRATEGY_RATE_RANGE_KEY + strategyId);
         log.info("getRateRange value:{}:", cacheKey);
         return redisService.getValue(Constants.RedisKeys.STRATEGY_RATE_RANGE_KEY + strategyId);
+    }
+
+    @Override
+    public StrategyEntity queryStrategyEntityByStrategyId(Long strategyId) {
+//        String cacheKey = Constants.RedisKeys.STRATEGY_KEY + strategyId;
+//        log.info("queryStrategyEntityByStrategyId key:{}:", cacheKey);
+//        StrategyEntity strategyEntity = redisService.getValue(cacheKey);
+//        log.info("queryStrategyEntityByStrategyId value:{}:", strategyEntity);
+//        if (strategyEntity != null) {
+//            return strategyEntity;
+//        }
+        Strategy strategy = strategyDao.queryStrategyByStrategyId(strategyId);
+        log.info("strategy is :{}:", strategy);
+        StrategyEntity strategyEntity = StrategyEntity.builder()
+            .strategyId(strategy.getStrategyId())
+            .strategyDesc(strategy.getStrategyDesc())
+            .ruleModels(strategy.getRuleModels())
+            .build();
+//        redisService.setValue(cacheKey, strategyEntity);
+        return strategyEntity;
+    }
+
+    @Override
+    public StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleModel) {
+        StrategyRule strategyRuleReq = new StrategyRule();
+        strategyRuleReq.setStrategyId(strategyId);
+        strategyRuleReq.setRuleModel(ruleModel);
+        StrategyRule strategyRules = strategyRuleDao.queryStrategyRule(strategyRuleReq);
+        return null;
     }
 }

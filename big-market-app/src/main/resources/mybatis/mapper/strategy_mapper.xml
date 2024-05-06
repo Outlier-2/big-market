@@ -7,12 +7,23 @@
     <result column="strategy_desc" property="strategyDesc"/>
     <result column="create_time" property="createTime"/>
     <result column="update_time" property="updateTime"/>
+    <result column="rule_models" property="ruleModels"/>
   </resultMap>
 
   <select id="queryStrategyList" resultMap="dataMap">
     select *
     from strategy
     limit 10;
+  </select>
+
+  <select id="queryStrategyByStrategyId" parameterType="java.lang.Long" resultMap="dataMap">
+    select id,
+    strategy_id,
+    strategy_desc,
+    create_time,
+    update_time,
+    rule_models
+    from strategy where strategy_id = #{strategyId};
   </select>
 
   <!--  <update id="updateOrderStatusByUserId" parameterType="java.lang.String">-->

@@ -35,5 +35,7 @@ public class Strategy {
      * 更新时间
      */
     private Date updateTime;
+    /** 抽奖规则模型 */
+    private String ruleModels;
 
 }

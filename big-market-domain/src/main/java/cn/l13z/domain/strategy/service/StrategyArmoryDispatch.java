@@ -1,7 +1,11 @@
 package cn.l13z.domain.strategy.service;
 
 import cn.l13z.domain.strategy.model.entity.StrategyAwardEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyEntity;
+import cn.l13z.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.l13z.domain.strategy.repository.IStrategyRepository;
+import cn.l13z.types.enums.ResponseCode;
+import cn.l13z.types.exception.AppException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.SecureRandom;
@@ -9,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,7 +31,7 @@ import org.springframework.stereotype.Service;
 @SuppressWarnings("unused")
 @Service
 @Slf4j
-public class StrategyArmory implements IStrategyArmory {
+public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatch {
 
     @Resource
     private IStrategyRepository strategyRepository;
@@ -35,10 +41,36 @@ public class StrategyArmory implements IStrategyArmory {
         // 1. 查询策略配置
         List<StrategyAwardEntity> strategyAwardEntities = strategyRepository.queryStrategyAward(
             strategyId);
+
         if (strategyAwardEntities.isEmpty()) {
             log.info("策略ID：{}策略奖品为空，无法装配", strategyId);
             return false;
         }
+
+        assembleLotteryStrategy(String.valueOf(strategyId), strategyAwardEntities);
+
+        // 2.权重策略装配 - 如果rule_weight 为空，不做权重策略装配
+        StrategyEntity strategyEntity = strategyRepository.queryStrategyEntityByStrategyId(strategyId);
+        String ruleWeightValue = strategyEntity.getRuleWeight();
+        if (ruleWeightValue == null) {
+            return true;
+        }
+        StrategyRuleEntity strategyRuleEntity = strategyRepository.queryStrategyRule(strategyId, ruleWeightValue);
+        if (null == strategyRuleEntity) {
+            throw new AppException(ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getCode(), ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getInfo());
+        }
+        Map<String, List<Integer>> ruleWeightValueMap = strategyRuleEntity.getRuleWeightMap();
+        Set<String> keys = ruleWeightValueMap.keySet();
+        for (String key : keys) {
+            List<Integer> ruleWeightValues = ruleWeightValueMap.get(key);
+            ArrayList<StrategyAwardEntity> strategyAwardEntitiesClone = new ArrayList<>(strategyAwardEntities);
+            strategyAwardEntitiesClone.removeIf(entity -> !ruleWeightValues.contains(entity.getAwardId()));
+            assembleLotteryStrategy(String.valueOf(strategyId).concat("_").concat(key), strategyAwardEntitiesClone);
+        }
+        return true;
+    }
+
+    private void assembleLotteryStrategy(String key, List<StrategyAwardEntity> strategyAwardEntities) {
 
         // 2. 获取最小概率
         BigDecimal minAwardRate = strategyAwardEntities.stream()
@@ -81,10 +113,9 @@ public class StrategyArmory implements IStrategyArmory {
         }
 
         // 8. 保存策略奖品概率查询表
-        strategyRepository.storeStrategyAwardSearchRate(strategyId,
+        strategyRepository.storeStrategyAwardSearchRate(key,
             shuffleStrategyAwardSearchRateTable.size(), shuffleStrategyAwardSearchRateTable);
 
-        return true;
     }
 
     @Override
@@ -100,5 +131,10 @@ public class StrategyArmory implements IStrategyArmory {
         return strategyRepository.getStrategyAwardAssemble(strategyId,
             new SecureRandom().nextInt(rateRange));
 
+    }
+
+    @Override
+    public Integer getRandomAwardId(Long strategyId, String ruleWeightValue) {
+        return 0;
     }
 }
