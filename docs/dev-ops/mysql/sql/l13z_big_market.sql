@@ -76,3 +76,24 @@ VALUES
     (13,100001,NULL,1,'rule_weight','6000,102,103,104,105,106,107,108,109','消耗6000分，必中奖范围','2023-12-09 10:30:43','2023-12-09 12:58:21'),
     (14,100001,NULL,1,'rule_blacklist','1','黑名单抽奖，积分兜底','2023-12-09 12:59:45','2023-12-09 13:42:23');
 
+create table award
+(
+    id           int(11) unsigned auto_increment comment '自增ID'
+        primary key,
+    award_id     int(8)                             null comment '奖品ID - 内部流转使用',
+    award_key    varchar(32)                        not null comment '奖品对接标识 - 每一个都对应一个发奖的策略',
+    award_config varchar(32)                        not null comment '奖品配置信息',
+    award_desc   varchar(128)                       not null comment '奖品描述',
+    create_time  datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time  datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
+)
+    charset = utf8mb4;
+
+
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (1, 101, 'user-credit-random', '1,100', '用户积分【优先透彻规则范围，如果没有则走配置】', '2023-12-09 11:07:06', '2023-12-09 11:21:31');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (2, 102, 'openai_user_count', '5', 'openAI增加使用次数', '2023-12-09 11:07:06', '2023-12-09 11:12:59');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (3, 103, 'openai_user_count', '10', 'openAI增加使用次数', '2023-12-09 11:07:06', '2023-12-09 11:12:59');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (4, 104, 'openai_user_count', '20', 'openAI增加使用次数', '2023-12-09 11:07:06', '2023-12-09 11:12:58');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (5, 105, 'openai_model', 'gpt-4', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:01');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (6, 106, 'openai_model', 'da11-e-2', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:08');
+INSERT INTO award (id, award_id, award_key, award_config, award_desc, create_time, update_time) VALUES (7, 107, 'openai_model', 'da11-e-3', 'openAI增加模型', '2023-12-09 11:07:06', '2023-12-09 11:12:10');
