@@ -22,6 +22,21 @@
     limit 10;
   </select>
 
+  <select id="queryStrategyAwardList" resultMap="dataMap">
+    select id,
+             strategy_id,
+      award_id,
+      award_title,
+      award_subtitle,
+      award_count,
+      award_count_surplus,
+      award_rate,
+      rule_models,
+      sort,
+      create_time,
+      update_time from strategy_award
+  </select>
+
   <!--  <update id="updateOrderStatusByUserId" parameterType="java.lang.String">-->
   <!--    UPDATE user_order SET order_status = 1 WHERE user_id = #{userId}-->
   <!--  </update>-->

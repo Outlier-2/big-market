@@ -8,4 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface IStrategyAwardDao {
 
     List<StrategyAward> queryStrategyList();
+
+    List<StrategyAward> queryStrategyAwardList();
 }

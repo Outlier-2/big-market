@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="fix: 添加奖品表">
-      <change afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/infrastructure/AwardDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IAwardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyRuleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/Award.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/Strategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyAward.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyRule.java" afterDir="false" />
+    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="fix: 完成基本的orm">
+      <change afterPath="$PROJECT_DIR$/big-market-app/src/main/java/cn/l13z/config/RedisClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-app/src/main/java/cn/l13z/config/RedisClientConfigProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/StrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/adapter/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/aggregate/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/AwardEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyAwardEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyConditionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/valobj/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/repository/IStrategyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/IStrategyArmory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/StrategyArmory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/redis/IRedissonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/redis/RedissonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/repository/StrategyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-types/src/main/java/cn/l13z/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-types/src/main/java/cn/l13z/types/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,16 +83,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ApiTest.executor": "Run",
     "JUnit.ApiTest.test.executor": "Run",
+    "JUnit.AwardDaoTest.executor": "Run",
     "JUnit.AwardDaoTest.test_queryAwardList.executor": "Run",
+    "JUnit.StrategyTest.executor": "Run",
+    "JUnit.StrategyTest.test_getAssembleRandomVal.executor": "Run",
+    "JUnit.StrategyTest.test_strategyArmory.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.big-market [clean].executor": "Run",
+    "Maven.big-market [compile].executor": "Run",
+    "Maven.big-market [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Application.executor": "Run",
     "database.data.extractors.current.export.id": "SQL 插入",
     "git-widget-placeholder": "05-06-orm",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AlfredOrlando/Desktop/big-market/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent",
+    "last_opened_file_path": "C:/Users/AlfredOrlando/Desktop/big-market/big-market-app/src/main/java/cn/l13z/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,14 +111,25 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mysql"
+      "mysql",
+      "redis"
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-app\src\main\java\cn\l13z\config" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-infrastructure\src\main\java\cn\l13z\infrastructure\persistent" />
+      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-domain\src\main\java\cn\l13z\domain" />
+      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-app\src\main\resources\mybatis" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\docs\dev-ops\mysql\sql" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.l13z.test.domain" />
+      <recent name="cn.l13z.infrastructure.persistent.repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,8 +139,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AwardDaoTest.test_queryAwardList">
-    <configuration name="ApiTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StrategyTest.test_getAssembleRandomVal">
+    <configuration name="ApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +150,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.l13z.test" />
       <option name="MAIN_CLASS_NAME" value="cn.l13z.test.ApiTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AwardDaoTest.test_queryAwardList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AwardDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +165,53 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.l13z.test.infrastructure" />
       <option name="MAIN_CLASS_NAME" value="cn.l13z.test.infrastructure.AwardDaoTest" />
-      <option name="METHOD_NAME" value="test_queryAwardList" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.l13z.test.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.StrategyTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StrategyTest.test_getAssembleRandomVal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.l13z.test.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.StrategyTest" />
+      <option name="METHOD_NAME" value="test_getAssembleRandomVal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StrategyTest.test_strategyArmory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.l13z.test.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.StrategyTest" />
+      <option name="METHOD_NAME" value="test_strategyArmory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,8 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AwardDaoTest.test_queryAwardList" />
-        <item itemvalue="JUnit.ApiTest.test" />
+        <item itemvalue="JUnit.StrategyTest.test_getAssembleRandomVal" />
+        <item itemvalue="JUnit.StrategyTest.test_strategyArmory" />
+        <item itemvalue="JUnit.StrategyTest" />
+        <item itemvalue="JUnit.AwardDaoTest" />
+        <item itemvalue="JUnit.ApiTest" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +250,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714995348455</updated>
-      <workItem from="1714995349277" duration="2089000" />
+      <workItem from="1714995349277" duration="8596000" />
     </task>
     <task id="LOCAL-00001" summary="init: 初始化项目">
       <option name="closed" value="true" />
@@ -194,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714997139116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: 完成基本的orm">
+      <option name="closed" value="true" />
+      <created>1714997667205</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714997667205</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +295,7 @@
     <MESSAGE value="init: 完成数据库的初始化" />
     <MESSAGE value="fix: 完成数据库的初始化" />
     <MESSAGE value="fix: 添加奖品表" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 添加奖品表" />
+    <MESSAGE value="fix: 完成基本的orm" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 完成基本的orm" />
   </component>
 </project>
