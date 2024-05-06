@@ -4,19 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="init: 初始化项目">
-      <change afterPath="$PROJECT_DIR$/docs/dev-ops/mysql/sql/l13z_big_market.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/main/resources/application-dev.yml" afterDir="false" />
+    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="fix: 添加奖品表">
+      <change afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/infrastructure/AwardDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IAwardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyRuleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/Award.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyAward.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyRule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="05-06-design-strategy" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +47,7 @@
     "accountId": "40c8dbbf-9221-453e-b168-c95342f9905d"
   }
 }]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
 }]]></component>
@@ -53,12 +68,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ApiTest.test.executor": "Run",
+    "JUnit.AwardDaoTest.test_queryAwardList.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "05-06-init",
+    "database.data.extractors.current.export.id": "SQL 插入",
+    "git-widget-placeholder": "05-06-orm",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AlfredOrlando/Desktop/big-market/docs/dev-ops/mysql/sql",
+    "last_opened_file_path": "C:/Users/AlfredOrlando/Desktop/big-market/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,10 +94,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-infrastructure\src\main\java\cn\l13z\infrastructure\persistent" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\docs\dev-ops\mysql\sql" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApiTest.test">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.AwardDaoTest.test_queryAwardList">
     <configuration name="ApiTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
@@ -95,6 +122,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AwardDaoTest.test_queryAwardList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.l13z.test.infrastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.l13z.test.infrastructure" />
+      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.infrastructure.AwardDaoTest" />
+      <option name="METHOD_NAME" value="test_queryAwardList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="big-market-app" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.l13z.Application" />
@@ -104,6 +147,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AwardDaoTest.test_queryAwardList" />
         <item itemvalue="JUnit.ApiTest.test" />
       </list>
     </recent_temporary>
@@ -124,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714995348455</updated>
-      <workItem from="1714995349277" duration="1154000" />
+      <workItem from="1714995349277" duration="2089000" />
     </task>
     <task id="LOCAL-00001" summary="init: 初始化项目">
       <option name="closed" value="true" />
@@ -134,7 +178,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714995767139</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: 完成数据库的初始化">
+      <option name="closed" value="true" />
+      <created>1714996656004</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714996656004</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: 添加奖品表">
+      <option name="closed" value="true" />
+      <created>1714997139116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714997139116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +202,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: 初始化项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: 初始化项目" />
+    <MESSAGE value="init: 完成数据库的初始化" />
+    <MESSAGE value="fix: 完成数据库的初始化" />
+    <MESSAGE value="fix: 添加奖品表" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 添加奖品表" />
   </component>
 </project>
