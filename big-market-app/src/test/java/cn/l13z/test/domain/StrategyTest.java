@@ -1,9 +1,7 @@
 package cn.l13z.test.domain;
 
-import cn.l13z.domain.strategy.service.IStrategyArmory;
-import cn.l13z.domain.strategy.service.IStrategyDispatch;
-import cn.l13z.infrastructure.persistent.dao.IStrategyAwardDao;
-import cn.l13z.infrastructure.persistent.po.StrategyAward;
+import cn.l13z.domain.strategy.service.armory.IStrategyArmory;
+import cn.l13z.domain.strategy.service.armory.IStrategyDispatch;
 import cn.l13z.infrastructure.persistent.redis.IRedissonService;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,9 +20,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author Fuzhengwei bugstack.cn @小傅哥
+ * @author AlfredOrlando
  * @description 策略领域测试
- * @create 2023-12-23 11:33
+ *
  */
 @Slf4j
 @RunWith(SpringRunner.class)

@@ -1,4 +1,4 @@
-package cn.l13z.domain.strategy.service;
+package cn.l13z.domain.strategy.service.armory;
 
 import cn.l13z.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.l13z.domain.strategy.model.entity.StrategyEntity;

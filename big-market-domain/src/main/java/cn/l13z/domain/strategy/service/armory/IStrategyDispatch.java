@@ -1,4 +1,4 @@
-package cn.l13z.domain.strategy.service;
+package cn.l13z.domain.strategy.service.armory;
 
 /**
  * ClassName: IStrategyDispatch.java <br>

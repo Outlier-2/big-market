@@ -39,7 +39,6 @@ public class StrategyRepository implements IStrategyRepository {
     @Resource
     private IStrategyDao strategyDao;
 
-
     @Resource
     private IStrategyRuleDao strategyRuleDao;
 
@@ -69,7 +68,7 @@ public class StrategyRepository implements IStrategyRepository {
             strategyAwardEntities.add(strategyAwardEntity);
         }
 
-//        redisService.setValue(cacheKey, strategyAwardEntities);
+        redisService.setValue(cacheKey, strategyAwardEntities);
         if (strategyAwardEntities.isEmpty()) {
             return null;
         }
@@ -105,21 +104,21 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public StrategyEntity queryStrategyEntityByStrategyId(Long strategyId) {
-//        String cacheKey = Constants.RedisKeys.STRATEGY_KEY + strategyId;
-//        log.info("queryStrategyEntityByStrategyId key:{}:", cacheKey);
-//        StrategyEntity strategyEntity = redisService.getValue(cacheKey);
-//        log.info("queryStrategyEntityByStrategyId value:{}:", strategyEntity);
-//        if (strategyEntity != null) {
-//            return strategyEntity;
-//        }
+        String cacheKey = Constants.RedisKeys.STRATEGY_KEY + strategyId;
+        log.info("queryStrategyEntityByStrategyId key:{}:", cacheKey);
+        StrategyEntity strategyEntity = redisService.getValue(cacheKey);
+        log.info("queryStrategyEntityByStrategyId value:{}:", strategyEntity);
+        if (strategyEntity != null) {
+            return strategyEntity;
+        }
         Strategy strategy = strategyDao.queryStrategyByStrategyId(strategyId);
         log.info("strategy is :{}:", strategy);
-        StrategyEntity strategyEntity = StrategyEntity.builder()
+        strategyEntity = StrategyEntity.builder()
             .strategyId(strategy.getStrategyId())
             .strategyDesc(strategy.getStrategyDesc())
             .ruleModels(strategy.getRuleModels())
             .build();
-//        redisService.setValue(cacheKey, strategyEntity);
+        redisService.setValue(cacheKey, strategyEntity);
         return strategyEntity;
     }
 
@@ -130,5 +129,17 @@ public class StrategyRepository implements IStrategyRepository {
         strategyRuleReq.setRuleModel(ruleModel);
         StrategyRule strategyRules = strategyRuleDao.queryStrategyRule(strategyRuleReq);
         return null;
+    }
+
+    @Override
+    public String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel) {
+        StrategyRule strategyRule = new StrategyRule();
+        strategyRule.setStrategyId(strategyId);
+        strategyRule.setAwardId(awardId);
+        strategyRule.setRuleModel(ruleModel);
+
+        String queryStrategyRuleValueStrategyValue = strategyRuleDao.queryStrategyRuleValue(strategyRule);
+        log.info("queryStrategyRuleValueStrategyValue: {}", queryStrategyRuleValueStrategyValue);
+        return queryStrategyRuleValueStrategyValue;
     }
 }
