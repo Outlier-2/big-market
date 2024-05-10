@@ -3,6 +3,7 @@ package cn.l13z.domain.strategy.repository;
 import cn.l13z.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.l13z.domain.strategy.model.entity.StrategyEntity;
 import cn.l13z.domain.strategy.model.entity.StrategyRuleEntity;
+import cn.l13z.domain.strategy.model.valobj.StrategyRuleModelVO;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public interface IStrategyRepository {
      * @param strategyId 策略ID
      * @return {@link List}<{@link StrategyAwardEntity}>
      */
-    List<StrategyAwardEntity> queryStrategyAward(Long strategyId);
+    List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId);
 
     /**
      * 存储策略奖励搜索率
@@ -56,4 +57,6 @@ public interface IStrategyRepository {
     StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleValue);
 
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
+
+    StrategyRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId);
 }

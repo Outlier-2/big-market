@@ -15,5 +15,5 @@ import cn.l13z.domain.strategy.model.entity.RuleActionEntity;
  */
 public interface ILogicFilter<T extends RuleActionEntity.RaffleEntity> {
 
-    RuleActionEntity<T> filter(RuleMatterEntity RuleMatterEntity);
+    RuleActionEntity<T> filter(RuleMatterEntity ruleMatterEntity);
 }

@@ -37,6 +37,10 @@
       update_time from strategy_award
   </select>
 
+  <select id="queryStrategyAwardRuleModel" parameterType="cn.l13z.infrastructure.persistent.po.StrategyAward" resultType="java.lang.String">
+    select rule_models from strategy_award where strategy_id = #{strategyId} and award_id = #{awardId}
+  </select>
+
   <!--  <update id="updateOrderStatusByUserId" parameterType="java.lang.String">-->
   <!--    UPDATE user_order SET order_status = 1 WHERE user_id = #{userId}-->
   <!--  </update>-->

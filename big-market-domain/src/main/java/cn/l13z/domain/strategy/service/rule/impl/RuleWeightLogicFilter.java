@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
- * ClassName: RuleWeightLogicFactory.java <br>
+ * ClassName: RuleWeightLogicFilter.java <br>
  *
  * @author AlfredOrlando <br>
  * <p>
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @LogicStrategy(logicMode = DefaultLogicFactory.LogicModel.RULE_WIGHT)
-public class RuleWeightLogicFactory implements ILogicFilter<RaffleBeforeEntity> {
+public class RuleWeightLogicFilter implements ILogicFilter<RaffleBeforeEntity> {
 
     @Resource
     private IStrategyRepository repository;

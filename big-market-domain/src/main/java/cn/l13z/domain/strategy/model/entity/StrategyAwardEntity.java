@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
  * <p>
  * Modification History: <br> - 2024/4/16 AlfredOrlando 策略奖品实体 <br>
  */
-@SuppressWarnings("unused")
 @Data
 @Builder
 @AllArgsConstructor
@@ -25,7 +24,7 @@ public class StrategyAwardEntity {
     /**
      * 抽奖策略ID
      */
-    private String strategyId;
+    private Long strategyId;
     /**
      * 抽奖奖品ID-内部使用
      */

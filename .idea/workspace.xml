@@ -4,34 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="fix: 完成基本的装配功能">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/RaffleStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RaffleAwardEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RaffleFactorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RuleActionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RuleMatterEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/valobj/RuleLogicCheckTypeVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/IRaffleStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/annotation/LogicStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/AbstractRaffleStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/DefaultRaffleStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/ILogicFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/factory/DefaultLogicFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/impl/RuleBackListLogicFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/impl/RuleWeightLogicFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="975fee44-e9b7-4647-83f5-19c9b079ad57" name="更改" comment="fix: 完成RaffleStrategy功能">
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/valobj/StrategyRuleModelVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/impl/RuleLockLogicFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_rule_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_rule_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/RaffleStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/RaffleStrategyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/StrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RaffleFactorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/RaffleFactorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyAwardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyAwardEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyRuleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/model/entity/StrategyRuleEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/repository/IStrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/repository/IStrategyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/IStrategyArmory.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/armory/IStrategyArmory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/IStrategyDispatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/armory/IStrategyDispatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/StrategyArmoryDispatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/armory/StrategyArmoryDispatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyRuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyRuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/armory/StrategyArmoryDispatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/armory/StrategyArmoryDispatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/AbstractRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/AbstractRaffleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/DefaultRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/raffle/DefaultRaffleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/ILogicFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/ILogicFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/factory/DefaultLogicFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/factory/DefaultLogicFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/impl/RuleWeightLogicFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/rule/impl/RuleWeightLogicFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/dao/IStrategyAwardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyAward.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/po/StrategyAward.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/repository/StrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-infrastructure/src/main/java/cn/l13z/infrastructure/persistent/repository/StrategyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-types/src/main/java/cn/l13z/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-types/src/main/java/cn/l13z/types/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/dev-ops/mysql/sql/l13z_big_market.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/mysql/sql/l13z_big_market.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="05-06-strategy-armory-rule-weight" />
+        <entry key="$PROJECT_DIR$" value="05-06-raffle-rule-before" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,46 +84,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.ApiTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ApiTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AwardDaoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AwardDaoTest.test_queryAwardList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RaffleStrategyTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RaffleStrategyTest.test_performRaffle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RaffleStrategyTest.test_performRaffle_blacklist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.test_getAssembleRandomVal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.test_getRandomAwardId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.test_map.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StrategyTest.test_strategyArmory.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.big-market [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.big-market [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.big-market [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 插入&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;05-06-raffle-rule-before&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AlfredOrlando/Desktop/big-market-05-06-strategy-armory-rule-weight&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ApiTest.executor": "Run",
+    "JUnit.ApiTest.test.executor": "Run",
+    "JUnit.AwardDaoTest.executor": "Run",
+    "JUnit.AwardDaoTest.test_queryAwardList.executor": "Run",
+    "JUnit.RaffleStrategyTest.executor": "Run",
+    "JUnit.RaffleStrategyTest.setUp.executor": "Run",
+    "JUnit.RaffleStrategyTest.test_performRaffle.executor": "Run",
+    "JUnit.RaffleStrategyTest.test_performRaffle_blacklist.executor": "Run",
+    "JUnit.StrategyTest.executor": "Run",
+    "JUnit.StrategyTest.test_getAssembleRandomVal.executor": "Run",
+    "JUnit.StrategyTest.test_getRandomAwardId.executor": "Run",
+    "JUnit.StrategyTest.test_map.executor": "Debug",
+    "JUnit.StrategyTest.test_strategyArmory.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.big-market [clean].executor": "Run",
+    "Maven.big-market [compile].executor": "Run",
+    "Maven.big-market [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Application.executor": "Run",
+    "database.data.extractors.current.export.id": "SQL 插入",
+    "git-widget-placeholder": "05-08-raffle-rule-center",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/AlfredOrlando/Desktop/big-market/big-market-app/src/test/java/cn/l13z/test/domain",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -143,11 +137,11 @@
       <recent name="cn.l13z.domain.strategy.model.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-app\src\test\java\cn\l13z\test\domain" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-domain\src\main\java\cn\l13z\domain\strategy\service" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-app\src\main\java\cn\l13z\config" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-infrastructure\src\main\java\cn\l13z\infrastructure\persistent" />
       <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-domain\src\main\java\cn\l13z\domain" />
-      <recent name="C:\Users\AlfredOrlando\Desktop\big-market\big-market-app\src\main\resources\mybatis" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.l13z.test.domain" />
@@ -161,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RaffleStrategyTest">
+  <component name="RunManager" selected="JUnit.StrategyTest">
     <configuration name="RaffleStrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
@@ -173,6 +167,22 @@
       <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
       <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.RaffleStrategyTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RaffleStrategyTest.setUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.l13z.test.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
+      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.RaffleStrategyTest" />
+      <option name="METHOD_NAME" value="setUp" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,22 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RaffleStrategyTest.test_performRaffle_blacklist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.l13z.test.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
-      <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.RaffleStrategyTest" />
-      <option name="METHOD_NAME" value="test_performRaffle_blacklist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
@@ -224,7 +218,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StrategyTest.test_map" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StrategyTest.test_strategyArmory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-app" />
       <extension name="coverage">
         <pattern>
@@ -234,7 +228,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.l13z.test.domain" />
       <option name="MAIN_CLASS_NAME" value="cn.l13z.test.domain.StrategyTest" />
-      <option name="METHOD_NAME" value="test_map" />
+      <option name="METHOD_NAME" value="test_strategyArmory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RaffleStrategyTest" />
         <item itemvalue="JUnit.StrategyTest" />
+        <item itemvalue="JUnit.StrategyTest.test_strategyArmory" />
+        <item itemvalue="JUnit.RaffleStrategyTest.setUp" />
+        <item itemvalue="JUnit.RaffleStrategyTest" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_performRaffle" />
-        <item itemvalue="JUnit.RaffleStrategyTest.test_performRaffle_blacklist" />
-        <item itemvalue="JUnit.StrategyTest.test_map" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +275,13 @@
       <workItem from="1715138954824" duration="723000" />
       <workItem from="1715141152598" duration="1520000" />
       <workItem from="1715144482678" duration="2125000" />
-      <workItem from="1715215330946" duration="643000" />
+      <workItem from="1715215330946" duration="1031000" />
+      <workItem from="1715217573128" duration="326000" />
+      <workItem from="1715218191656" duration="1260000" />
+      <workItem from="1715220746730" duration="6617000" />
+      <workItem from="1715236287222" duration="2251000" />
+      <workItem from="1715247653814" duration="18703000" />
+      <workItem from="1715301187261" duration="2328000" />
     </task>
     <task id="LOCAL-00001" summary="init: 初始化项目">
       <option name="closed" value="true" />
@@ -331,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715004141626</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: 完成RaffleStrategy功能">
+      <option name="closed" value="true" />
+      <created>1715217252916</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715217252916</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +364,8 @@
     <MESSAGE value="fix: 完成基本的装配" />
     <MESSAGE value="fix: 完成基本的orm" />
     <MESSAGE value="fix: 完成基本的装配功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 完成基本的装配功能" />
+    <MESSAGE value="fix: 完成RaffleStrategy功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 完成RaffleStrategy功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -390,6 +399,11 @@
           <url>file://$PROJECT_DIR$/big-market-domain/src/main/java/cn/l13z/domain/strategy/service/StrategyArmoryDispatch.java</url>
           <line>62</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/big-market-app/src/test/java/cn/l13z/test/domain/StrategyTest.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

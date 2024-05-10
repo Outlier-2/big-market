@@ -24,7 +24,7 @@ public class StrategyAward {
     /**
      * 抽奖策略ID
      */
-    private String strategyId;
+    private Long strategyId;
 
     /**
      * 抽奖奖品ID - 内部流转使用
