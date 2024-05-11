@@ -39,11 +39,14 @@ public class StrategyEntity {
 
     public String getRuleWeight() {
         String[] ruleModels = this.ruleModels();
+        if (ruleModels == null) {
+            return "rule_blacklist";
+        }
         for (String ruleModel : ruleModels) {
-            if (!"rule_weight".equals(ruleModel)) {
+            if (!"rule_weight".equals(ruleModel) && ruleModel != null) {
                 return ruleModel;
             }
         }
-        return null;
+        return "rule_blacklist";
     }
 }

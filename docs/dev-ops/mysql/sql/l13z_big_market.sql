@@ -1,3 +1,23 @@
+# ************************************************************
+# Sequel Ace SQL dump
+# 版本号： 20050
+#
+# https://sequel-ace.com/
+# https://github.com/Sequel-Ace/Sequel-Ace
+#
+# 主机: 127.0.0.1 (MySQL 5.6.39)
+# 数据库: big_market
+# 生成时间: 2024-01-13 06:15:50 +0000
+# ************************************************************
+
+
+
+
+CREATE database if NOT EXISTS `big_market` default character set utf8mb4 collate utf8mb4_0900_ai_ci;
+use `big_market`;
+
+# 转储表 award
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `award`;
 
@@ -45,6 +65,7 @@ CREATE TABLE `strategy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+
 INSERT INTO `strategy` (`id`, `strategy_id`, `strategy_desc`, `rule_models`, `create_time`, `update_time`)
 VALUES
     (1,100001,'抽奖策略','rule_weight,rule_blacklist','2023-12-09 09:37:19','2023-12-09 18:06:34'),
@@ -76,6 +97,7 @@ CREATE TABLE `strategy_award` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+
 INSERT INTO `strategy_award` (`id`, `strategy_id`, `award_id`, `award_title`, `award_subtitle`, `award_count`, `award_count_surplus`, `award_rate`, `rule_models`, `sort`, `create_time`, `update_time`)
 VALUES
     (1,100001,101,'随机积分',NULL,80000,80000,0.3000,'rule_random',1,'2023-12-09 09:38:31','2023-12-31 11:14:42'),
@@ -93,6 +115,7 @@ VALUES
     (13,100003,107,'增加dall-e-3画图模型','抽奖1次后解锁',200,200,0.0400,'rule_lock,rule_luck_award',7,'2023-12-09 09:45:38','2023-12-23 14:01:02'),
     (14,100003,108,'增加100次使用','抽奖2次后解锁',199,199,0.0099,'rule_lock,rule_luck_award',8,'2023-12-09 09:46:02','2024-01-13 10:26:29'),
     (15,100003,109,'解锁全部模型','抽奖6次后解锁',1,1,0.0001,'rule_lock,rule_luck_award',9,'2023-12-09 09:46:39','2023-12-09 12:20:50');
+
 
 
 
@@ -116,6 +139,7 @@ CREATE TABLE `strategy_rule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+
 INSERT INTO `strategy_rule` (`id`, `strategy_id`, `award_id`, `rule_type`, `rule_model`, `rule_value`, `rule_desc`, `create_time`, `update_time`)
 VALUES
     (1,100001,101,2,'rule_random','1,1000','随机积分策略','2023-12-09 10:05:30','2023-12-09 12:55:52'),
@@ -135,4 +159,5 @@ VALUES
     (15,100003,107,2,'rule_lock','1','抽奖1次后解锁','2023-12-09 10:16:41','2023-12-09 12:55:53'),
     (16,100003,108,2,'rule_lock','2','抽奖2次后解锁','2023-12-09 10:17:43','2024-01-13 10:56:48'),
     (17,100003,109,2,'rule_lock','6','抽奖6次后解锁','2023-12-09 10:17:43','2023-12-09 12:55:54');
+
 

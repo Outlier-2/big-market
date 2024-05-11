@@ -1,6 +1,6 @@
 package cn.l13z.domain.strategy.service.annotation;
 
-import cn.l13z.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.l13z.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

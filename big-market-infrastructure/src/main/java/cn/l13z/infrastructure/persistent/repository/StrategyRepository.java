@@ -128,7 +128,9 @@ public class StrategyRepository implements IStrategyRepository {
         StrategyRule strategyRuleReq = new StrategyRule();
         strategyRuleReq.setStrategyId(strategyId);
         strategyRuleReq.setRuleModel(ruleModel);
+        log.info("queryStrategyRule strategyRuleReq is :{}:", strategyRuleReq);
         StrategyRule strategyRules = strategyRuleDao.queryStrategyRule(strategyRuleReq);
+        log.info("strategyRules is :{}:", strategyRules);
         return StrategyRuleEntity.builder()
                 .strategyId(strategyRules.getStrategyId())
                 .awardId(strategyRules.getAwardId())
@@ -152,11 +154,17 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
+    public String queryStrategyRuleValue(Long strategyId, String ruleModel) {
+        return queryStrategyRuleValue(strategyId, null, ruleModel);
+    }
+
+    @Override
     public StrategyRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId) {
         StrategyAward strategyAward = new StrategyAward();
         strategyAward.setStrategyId(strategyId);
         strategyAward.setAwardId(awardId);
         String ruleModels = strategyAwardDao.queryStrategyAwardRuleModel(strategyAward);
+        log.info("queryStrategyAwardRuleModel ruleModels: {}", ruleModels);
         return StrategyRuleModelVO.builder().ruleModels(ruleModels).build();
     }
 }

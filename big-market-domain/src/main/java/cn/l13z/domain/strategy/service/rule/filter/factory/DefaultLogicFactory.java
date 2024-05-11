@@ -1,8 +1,8 @@
-package cn.l13z.domain.strategy.service.rule.factory;
+package cn.l13z.domain.strategy.service.rule.filter.factory;
 
 import cn.l13z.domain.strategy.model.entity.RuleActionEntity;
 import cn.l13z.domain.strategy.service.annotation.LogicStrategy;
-import cn.l13z.domain.strategy.service.rule.ILogicFilter;
+import cn.l13z.domain.strategy.service.rule.filter.ILogicFilter;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

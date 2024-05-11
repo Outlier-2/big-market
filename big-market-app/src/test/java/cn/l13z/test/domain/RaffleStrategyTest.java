@@ -4,8 +4,8 @@ import cn.l13z.domain.strategy.model.entity.RaffleAwardEntity;
 import cn.l13z.domain.strategy.model.entity.RaffleFactorEntity;
 import cn.l13z.domain.strategy.service.IRaffleStrategy;
 import cn.l13z.domain.strategy.service.armory.IStrategyArmory;
-import cn.l13z.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import cn.l13z.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import cn.l13z.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
+import cn.l13z.domain.strategy.service.rule.filter.impl.RuleWeightLogicFilter;
 import com.alibaba.fastjson.JSON;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -35,8 +35,8 @@ public class RaffleStrategyTest {
     @Resource
     private RuleLockLogicFilter ruleLockLogicFilter;
 
-    @Test
-//    @Before
+//    @Test
+    @Before
     public void setUp() {
         // 策略装配 100001、100002、100003
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100001L));

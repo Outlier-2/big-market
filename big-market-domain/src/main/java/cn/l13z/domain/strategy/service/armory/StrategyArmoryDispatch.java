@@ -44,12 +44,19 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
 
         // 2. 权重策略配置 - 适用于 rule_weight 权重规则配置
         StrategyEntity strategyEntity = repository.queryStrategyEntityByStrategyId(strategyId);
-        String ruleWeight = strategyEntity.getRuleWeight();
-        if (null == ruleWeight) return true;
-
+        log.info("策略ID：{}的权重策略配置：{}器组成的StrategyEntity： {}", strategyId, strategyEntity.getRuleWeight(),
+            strategyEntity);
+        String ruleWeight ;
+        if (null == strategyEntity.getRuleWeight()) {
+            ruleWeight = null;
+            return true;
+        }
+        ruleWeight = strategyEntity.getRuleWeight();
         StrategyRuleEntity strategyRuleEntity = repository.queryStrategyRule(strategyId, ruleWeight);
+        log.info("策略ID：{}的权重策略配置：{}的StrategyRuleEntity： {}", strategyId, ruleWeight, strategyRuleEntity);
         if (null == strategyRuleEntity) {
-            throw new AppException(ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getCode(), ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getInfo());
+            throw new AppException(ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getCode(),
+                ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getInfo());
         }
         Map<String, List<Integer>> ruleWeightValueMap = strategyRuleEntity.getRuleWeightMap();
         if (null == ruleWeightValueMap || ruleWeightValueMap.isEmpty()) {
@@ -61,7 +68,8 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
             List<Integer> ruleWeightValues = ruleWeightValueMap.get(key);
             ArrayList<StrategyAwardEntity> strategyAwardEntitiesClone = new ArrayList<>(strategyAwardEntities);
             strategyAwardEntitiesClone.removeIf(entity -> !ruleWeightValues.contains(entity.getAwardId()));
-            assembleLotteryStrategy(String.valueOf(strategyId).concat(Constants.UNDERLINE).concat(key), strategyAwardEntitiesClone);
+            assembleLotteryStrategy(String.valueOf(strategyId).concat(Constants.UNDERLINE).concat(key),
+                strategyAwardEntitiesClone);
         }
 
         return true;

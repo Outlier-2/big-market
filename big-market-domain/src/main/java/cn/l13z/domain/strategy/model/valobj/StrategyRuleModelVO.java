@@ -1,6 +1,6 @@
 package cn.l13z.domain.strategy.model.valobj;
 
-import cn.l13z.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.l13z.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.l13z.types.common.Constants;
 import java.util.ArrayList;
 import java.util.List;

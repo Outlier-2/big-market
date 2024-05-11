@@ -1,4 +1,4 @@
-package cn.l13z.domain.strategy.service.rule;
+package cn.l13z.domain.strategy.service.rule.filter;
 
 import cn.l13z.domain.strategy.model.entity.RuleMatterEntity;
 import cn.l13z.domain.strategy.model.entity.RuleActionEntity;
